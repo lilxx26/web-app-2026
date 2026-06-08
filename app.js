@@ -16,7 +16,7 @@ const pool = new Pool({
 
 app.get('/api/messages', async (req, res) => {
   const result = await pool.query(
-    'SELECT * FROM messages ORDER BY created_at ASC'
+   'SELECT * FROM messages ORDER BY created_at ASC'
   );
   res.json(result.rows);
 });
