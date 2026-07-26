@@ -1,4 +1,4 @@
-import { useState, useeEffect } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   // まだ DB とつながっていない。データは直接書いている状態
@@ -9,7 +9,7 @@ function App() {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    fetch("api/messages")
+    fetch("/api/messages")
     .then((res) => res.json())
     .then(setMessages);
   },[])
