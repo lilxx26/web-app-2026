@@ -8,7 +8,11 @@ function App() {
   const [username, setUsername] = useState("");
   const [text, setText] = useState("");
 
-
+  useEffect(() => {
+    fetch("api/messages")
+    .then((res) => res.json())
+    .then(setMessages);
+  },[])
 
   // chat.html の form の submit イベントと同じ。
   // e.preventDefault() でページの再読み込みを止めるのも同じ。
